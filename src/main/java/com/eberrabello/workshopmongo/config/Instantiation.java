@@ -2,6 +2,7 @@ package com.eberrabello.workshopmongo.config;
 
 import com.eberrabello.workshopmongo.domain.Post;
 import com.eberrabello.workshopmongo.domain.User;
+import com.eberrabello.workshopmongo.dto.AuthorDTO;
 import com.eberrabello.workshopmongo.repository.PostRepository;
 import com.eberrabello.workshopmongo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,10 +34,11 @@ public class Instantiation implements CommandLineRunner {
         User alex = new User(null, "Alex Green", "alex@gmail.com");
         User bob = new User(null, "Bob Grey", "bob@gmail.com");
 
-        Post post1 = new Post(null, Instant.parse("2024-03-21T10:12:30.58Z"), "Partiu viagem", "Vou viajar para São Paulo. Abraços!", maria);
-        Post post2 = new Post(null, Instant.parse("2024-03-23T10:18:45.21Z"), "Bom dia", "Acordei feliz hoje!", maria);
-
         userRepository.saveAll(Arrays.asList(maria, alex, bob));
+
+        Post post1 = new Post(null, Instant.parse("2024-03-21T10:12:30.58Z"), "Partiu viagem", "Vou viajar para São Paulo. Abraços!", new AuthorDTO(maria));
+        Post post2 = new Post(null, Instant.parse("2024-03-23T10:18:45.21Z"), "Bom dia", "Acordei feliz hoje!", new AuthorDTO(maria));
+
         postRepository.saveAll(Arrays.asList(post1, post2));
     }
 }
