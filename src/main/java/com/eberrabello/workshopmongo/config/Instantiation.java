@@ -4,7 +4,6 @@ import com.eberrabello.workshopmongo.domain.Post;
 import com.eberrabello.workshopmongo.domain.User;
 import com.eberrabello.workshopmongo.dto.AuthorDTO;
 import com.eberrabello.workshopmongo.dto.CommentDTO;
-import com.eberrabello.workshopmongo.dto.UserDTO;
 import com.eberrabello.workshopmongo.repository.PostRepository;
 import com.eberrabello.workshopmongo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,6 @@ import org.springframework.context.annotation.Configuration;
 import java.time.Instant;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
-import java.util.List;
 
 @Configuration
 public class Instantiation implements CommandLineRunner {
